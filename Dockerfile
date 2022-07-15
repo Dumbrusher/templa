@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # RUN code-server --install-extension esbenp.prettier-vscode
 
 # Install apt packages:
-# RUN sudo apt-get install -y ubuntu-make
+RUN sudo apt-get install -y ubuntu-make
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
@@ -41,4 +41,4 @@ ENV PORT=8080
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
-RUN sudo apt-get install python3 python3-venv python3-pip
+RUN sudo apt-get install python3 python3-venv python3-pip -y
